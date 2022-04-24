@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}Main{% endblock %}
+
+{% block body %}
+
+{% block content %}
+<section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">
+              On our instagram you can buy shoe molds for dolls shoes
+          </h1>
+          <p class="lead text-muted">
+              ● Paola Reina ● Blythe ● Götz ● Handmade Dolls ●
+            <p>
+            <a href="https://www.instagram.com/all_for_dolls_eu/?hl=ru" class="btn btn-primary my-2">
+                Check our instagram
+            </a>
+<!--            <a href="#" class="btn btn-secondary my-2">Secondary action</a>-->
+          </p>
+        </div>
+</section>
+
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            {% for product in db %}
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                         alt="Thumbnail [100%x225]" style="height: 325px; width: 100%; display: block;"
+                         src='./static/img/{{ product.src }}'
+                         data-holder-rendered="true">
+                    <div class="card-body">
+                        <p class="card-text">
+                            <h4>{{ product.title }}</h4>
+                            {{ product.about }} <br>
+                            • Size - {{ product.size }} cm.<br>
+                            • Price - {{ product.price}} € without delivery.
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">
+                                    <a href="https://www.instagram.com/p/{{ product.link }}">View in Instagram</a>
+                                </button>
+                            </div>
+                            <!--<small class="text-muted">9 mins</small>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% endblock %}

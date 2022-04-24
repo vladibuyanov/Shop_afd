@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Create{% endblock %}
+
+{% block body %}
+
+{% block content %}
+    <div class="container">
+        <h2>New post</h2> <br>
+            <form method="post">
+                <input type="text" class="form-control" name="title" id="title" placeholder="Title"> <br>
+                <input type="text" class="form-control" name="price" id="price" placeholder="Price"> <br>
+                <input type="text" class="form-control" name="about" id="about" placeholder="About"> <br>
+                <input type="text" class="form-control" name="size" id="size" placeholder="Size"> <br>
+                <input type="text" class="form-control" name="src" id="src" placeholder="Src"> <br>
+                <input type="text" class="form-control" name="link" id="link" placeholder="Link"> <br>
+                <button class="btn btn-outline-primary" type="submit">Send</button>
+            </form>
+        <br>
+        <a class="btn btn-outline-primary" href="/logout">Sign out</a>
+    </div>
+    <br>
+{% endblock %}
+
+{% endblock %}
