@@ -42,6 +42,7 @@ def load_user(user_id):
     return User.query.get(user_id)
 
 
+# Main page
 @app.route('/')
 @app.route('/index', methods=['GET', 'POST'])
 def index_test():
